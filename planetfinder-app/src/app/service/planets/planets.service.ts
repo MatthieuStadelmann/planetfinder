@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Planet } from '../../models/planet';
-import {Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {catchError, map, tap} from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Injectable({
@@ -15,7 +15,8 @@ export class PlanetsService {
   allPlanets(): Observable<Planet[]> {
     return this.http.get<any>(this.apiUrl)
       .pipe(
-        map(res => res.results)
+        map(res => res.results),
+        catchError(this.handleError<Planet[]>('allPlanets', []))
       );
   }
   searchPlanetByName(term: string): Observable<Planet[]> {
@@ -27,6 +28,12 @@ export class PlanetsService {
       map(res => res.results),
       tap(_ => console.log(`found planet matching "${term}"`)),
       catchError(this.handleError<Planet[]>('searchPlanetByName', []))
+    );
+  }
+  getPlanetById(id: string): Observable<Planet> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`).pipe(
+      tap(_ => console.log(`fetched planet id=${id}`)),
+      catchError(this.handleError<Planet[]>('getPlanetById', []))
     );
   }
   private handleError<T>(operation = 'operation', result?: T) {
