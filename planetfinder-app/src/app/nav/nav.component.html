@@ -3,9 +3,14 @@
     <img alt="Home" src="../../assets/r2d2.svg">
     <span class="navbar-title">PLANETFINDER</span>
   </a>
-
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control form-control__large mr-sm-2" type="search" placeholder="Search for Star Wars planet by name" aria-label="Search">
-    <button class="btn btn__red my-2 my-sm-0" type="submit">Search</button>
-  </form>
+  <div class="search-component">
+    <input #searchBox class="search-box" (input)="search(searchBox.value)" />
+    <ul class="search-result">
+      <li *ngFor="let planet of planets$ | async" >
+        <a routerLink="/detail/{{planet.name}}">
+          {{planet.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>

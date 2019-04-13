@@ -20,3 +20,44 @@
   color: white;
   background-color: #E74B3C;
 }
+
+.search-component {
+  padding: .5rem 1rem;
+}
+.search-result {
+  position: absolute;
+  z-index: 99;
+}
+
+.search-result, .search-box {
+  width: 300px;
+}
+.search-result li {
+  padding: 3px;
+  background-color: white;
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.search-result li:hover {
+  background-color: #607D8B;
+}
+
+.search-result li a {
+  color: #888;
+  display: block;
+  text-decoration: none;
+}
+
+.search-result li a:hover {
+  color: white;
+}
+.search-result li a:active {
+  color: white;
+}
+
+
+ul.search-result {
+  margin-top: 0;
+  padding-left: 0;
+}
