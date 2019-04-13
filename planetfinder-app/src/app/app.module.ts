@@ -8,13 +8,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
+import { PlanetInfoComponent } from './planet-info/planet-info.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PlanetsComponent,
-    NavComponent
+    NavComponent,
+    PlanetInfoComponent
   ],
   imports: [
     BrowserModule,

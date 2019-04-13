@@ -16,11 +16,6 @@ export class NavComponent implements OnInit {
   private searchTerms = new Subject<string>();
 
   constructor(private planetsService: PlanetsService) { }
-
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
-
   ngOnInit() {
     this.planets$ = this.searchTerms.pipe(
       debounceTime(300),
@@ -32,4 +27,7 @@ export class NavComponent implements OnInit {
 
   }
 
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
 }

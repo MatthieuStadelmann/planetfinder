@@ -1,13 +1,13 @@
 <nav class="navbar navbar__black">
-  <a class="nav-link">
+  <a class="nav-link" routerLink="/">
     <img alt="Home" src="../../assets/r2d2.svg">
     <span class="navbar-title">PLANETFINDER</span>
   </a>
   <div class="search-component">
     <input #searchBox class="search-box" (input)="search(searchBox.value)" />
     <ul class="search-result">
-      <li *ngFor="let planet of planets$ | async" >
-        <a routerLink="/detail/{{planet.name}}">
+      <li *ngFor="let planet of planets$ | async">
+        <a routerLink="/planet/{{planet.url.substring(planet.url.length -2, planet.url.length)}}">
           {{planet.name}}
         </a>
       </li>
