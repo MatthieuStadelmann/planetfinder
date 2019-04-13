@@ -1,4 +1,4 @@
-export class Planet {
+export interface Planet {
   name: string;
   diameter: string;
   rotationPeriod: string;
