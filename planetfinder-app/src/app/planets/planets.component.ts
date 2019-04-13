@@ -14,10 +14,10 @@ export class PlanetsComponent implements OnInit {
   constructor(private planetsService: PlanetsService) { }
 
   ngOnInit() {
-    this.getPlanets();
+    this.getAllPlanets();
   }
-  getPlanets(): void {
-    this.planetsService.getPlanets().subscribe(planets => this.dataSource.data = planets);
+  getAllPlanets(): void {
+    this.planetsService.allPlanets().subscribe(planets => this.dataSource.data = planets);
   }
 
 }
