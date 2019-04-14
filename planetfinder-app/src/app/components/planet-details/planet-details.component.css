@@ -38,6 +38,11 @@ th:nth-child(n+2) {
   color: white;
 }
 
+.table-container-header p {
+  padding: 5px;
+}
+
+
 .data-table-row {
   border-bottom: .0625rem #999 dotted;
 }
