@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { PlanetsService } from '../service/planets/planets.service';
+import { PlanetsService } from '../services/planets/planets.service';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';

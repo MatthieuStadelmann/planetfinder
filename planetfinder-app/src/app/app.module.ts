@@ -7,7 +7,7 @@ import { PlanetsComponent } from './planets/planets.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { PlanetInfoComponent } from './planet-info/planet-info.component';
-import { DataTableComponent } from './data-table/data-table.component';
+import { DataTableComponent } from './planets/data-table/data-table.component';
 
 
 @NgModule({
