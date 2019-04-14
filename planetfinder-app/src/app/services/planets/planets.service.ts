@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Planet } from '../../models/planet';
 import {Observable, of} from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { ApiService } from '../api.service';
 import {HttpClient} from '@angular/common/http';
 

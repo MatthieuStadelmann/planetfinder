@@ -17,6 +17,7 @@ export class PlanetDetailsComponent implements OnInit {
   private planet: Planet;
   private films: Film[] = [];
   private residents: People[] = [];
+  private locationId: string = this.route.snapshot.paramMap.get('id');
 
   generalInformationHeaders: object[] = [
     {name: 'Name'},
@@ -36,31 +37,36 @@ export class PlanetDetailsComponent implements OnInit {
     private peopleService: PeopleService,
     private route: ActivatedRoute,
     private location: Location,
-    private router: Router
+    private router: Router,
   ) {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
-        // TODO: START Loader
       }
       if (event instanceof NavigationEnd) {
-        this.getPlanet();
-        // TODO: HIDE Loader
+        if (this.route.snapshot.paramMap.get('id') !== this.locationId) {
+          this.getPlanet();
+        }
       }
     });
   }
 
   ngOnInit() {
+    // TODO: START Loader
     this.getPlanet();
   }
 
   getPlanet(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.planetsService.getPlanetByIdWithDetails(id)
-      .subscribe(planet => {
-        this.planet = planet;
-        this.getFilms(this.planet.films);
-        this.getResidents(this.planet.residents);
-      });
+    this.locationId = this.route.snapshot.paramMap.get('id');
+    this.films.length = 0;
+    this.planetsService.getPlanetByIdWithDetails(this.locationId)
+      .subscribe(
+        planet => this.planet = planet,
+        err => console.error('Observer got an error: ' + err),
+        () => {
+          this.getFilms(this.planet.films);
+          this.getResidents(this.planet.residents);
+        }
+      )
   }
 
   getFilms(filmUrls: string[]): void {
@@ -69,7 +75,7 @@ export class PlanetDetailsComponent implements OnInit {
   }
 
   getResidents(residentUrls: string[]): void {
-    console.log('test_01');
+    this.residents = [];
     this.peopleService.getPeopleByUrls(residentUrls)
       .subscribe(resident => this.residents.push(resident))
   }

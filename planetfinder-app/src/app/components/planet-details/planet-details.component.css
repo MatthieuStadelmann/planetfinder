@@ -1,3 +1,15 @@
+@media (max-width: 767.98px) {
+
+  th:nth-child(n+4) {
+    display: none;
+  }
+
+  td:nth-child(n+4) {
+    display: none;
+  }
+
+}
+
 table {
   width: 100%;
   border-spacing: 5px;

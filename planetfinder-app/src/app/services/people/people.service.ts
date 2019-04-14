@@ -10,7 +10,6 @@ import {People} from '../../models/people';
 })
 export class PeopleService extends ApiService {
   getPeopleByUrls(residentUrls: string[]): Observable<People> {
-    console.log('test_02');
     return from(residentUrls).pipe(
       mergeMap(url => <Observable<People>> this.http.get(url))
     );
