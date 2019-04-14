@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanetsService } from '../service/planets/planets.service';
 import { Planet } from '../models/planet';
-import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-planets',
@@ -9,15 +8,14 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./planets.component.css']
 })
 export class PlanetsComponent implements OnInit {
-  displayedColumns: string[] = ['index', 'name', 'population', 'climate'];
-  dataSource = new MatTableDataSource<Planet>();
   constructor(private planetsService: PlanetsService) { }
+  planets: Planet[];
+  displayedColumns: string[] = ['Name', 'Population', 'Film Appearances', 'Last Edited', 'Created'];
 
   ngOnInit() {
     this.getAllPlanets();
   }
   getAllPlanets(): void {
-    this.planetsService.allPlanets().subscribe(planets => this.dataSource.data = planets);
+    this.planetsService.allPlanets().subscribe(planets => this.planets = planets);
   }
-
 }

@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PlanetsComponent } from './planets/planets.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './nav/nav.component';
 import { PlanetInfoComponent } from './planet-info/planet-info.component';
+import { DataTableComponent } from './data-table/data-table.component';
 
 
 @NgModule({
@@ -16,16 +15,14 @@ import { PlanetInfoComponent } from './planet-info/planet-info.component';
     AppComponent,
     PlanetsComponent,
     NavComponent,
-    PlanetInfoComponent
+    PlanetInfoComponent,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

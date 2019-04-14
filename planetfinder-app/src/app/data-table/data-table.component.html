@@ -1,0 +1,17 @@
+<div class="table-container">
+  <div class="table-container-header">
+    <p>All Planets</p>
+  </div>
+  <table>
+    <tr class="data-table-headers">
+      <th *ngFor="let column of displayedColumns">{{column}}</th>
+    </tr>
+    <tr *ngFor="let planet of planets" class="data-table-row">
+      <td class="text-left"><a routerLink="/planet/{{planet.url.substring(planet.url.length -2, planet.url.length)}}">{{planet.name}}</a></td>
+      <td class="text-right">{{planet.population}}</td>
+      <td class="text-right">{{planet.films.length}}</td>
+      <td class="text-right">{{planet.edited | date:'shortDate'}}</td>
+      <td class="text-right">{{planet.created | date:'shortDate'}}</td>
+    </tr>
+  </table>
+</div>
