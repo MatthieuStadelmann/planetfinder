@@ -1,10 +1,15 @@
-<div *ngIf="planet" class="container-fluid mt-5">
+<div *ngIf="planet" class="container-fluid mt-3">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-between">
+      <div class="planet-name">
+        <p>Planet: {{planet.name}}</p>
+      </div>
+      <p>Last Edited:{{planet.edited | date:'shortDate'}}</p>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6">
       <div class="table-container">
-        <div class="back-btn" routerLink="/">
-          <img alt="Back Button" src="../../../assets/icons/back_arrow.svg" />
-        </div>
         <div class="table-container-header">
           <p>General Information</p>
         </div>

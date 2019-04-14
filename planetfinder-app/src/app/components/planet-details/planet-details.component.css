@@ -51,8 +51,3 @@ th:nth-child(n+2) {
   color: #555;
 }
 
-.back-btn {
-  cursor: pointer;
-  position: absolute;
-  top: -35px;
-}

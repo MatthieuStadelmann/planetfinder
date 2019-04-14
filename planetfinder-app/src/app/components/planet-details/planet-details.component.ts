@@ -80,8 +80,4 @@ export class PlanetDetailsComponent implements OnInit {
       .subscribe(resident => this.residents.push(resident))
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
 }
