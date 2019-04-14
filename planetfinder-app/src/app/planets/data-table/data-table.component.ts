@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Planet} from '../models/planet';
+import {Planet} from '../../models/planet';
 
 @Component({
   selector: 'app-data-table',

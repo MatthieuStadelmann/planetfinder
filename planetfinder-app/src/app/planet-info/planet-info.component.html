@@ -1,7 +1,33 @@
 <div *ngIf="planet" class="container-fluid mt-5">
   <div class="row">
+    <div class="col-md-6">
+      <div class="table-container">
+        <div class="table-container-header">
+          <p>General Information</p>
+        </div>
+      <table>
+        <tr *ngFor="let generalInformationHeader of generalInformationHeaders" class="data-table-row">
+          <th *ngFor="let item of generalInformationHeader | keyvalue" class="data-table-header">{{item.value}}</th>
+          <td *ngFor="let item of generalInformationHeader | keyvalue" class="text-right">{{planet[item.key]}}</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <table style="width:100%">
+        <tr>
+          <th>Name:</th>
+          <td>Bill Gates</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Telephone:</th>
+          <td>55577854</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-12">
-      <h2>{{planet.name | uppercase}} Details</h2>
     </div>
   </div>
 </div>

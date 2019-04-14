@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanetsService } from '../service/planets/planets.service';
+import { PlanetsService } from '../services/planets/planets.service';
 import { ActivatedRoute, Router, Event, NavigationStart, NavigationEnd } from '@angular/router';
 import { Location } from '@angular/common';
 import { Planet } from '../models/planet';
@@ -11,7 +11,16 @@ import { Planet } from '../models/planet';
 })
 export class PlanetInfoComponent implements OnInit {
   private planet: Planet;
-
+  generalInformationHeaders: object[] = [
+    {name: 'Name'},
+    {population: 'Population'},
+    {gravity: 'Gravity'},
+    {orbital_period: 'Orbital Period'},
+    {climate: 'Climate'},
+    {diameter: 'Diameter'},
+    {rotation_period: 'Rotation Period'},
+    {surface_water: 'Surface Water'},
+    {terrain: 'Terrain'}];
   constructor(
     private planetsService: PlanetsService,
     private route: ActivatedRoute,
