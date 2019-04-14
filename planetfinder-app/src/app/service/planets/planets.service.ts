@@ -4,7 +4,6 @@ import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +14,9 @@ export class PlanetsService {
   allPlanets(): Observable<Planet[]> {
     return this.http.get<any>(this.apiUrl)
       .pipe(
-        map(res => res.results),
+        map(res => {
+          return res.results.sort((a, b) => a.name < b.name ? -1 : 1);
+        }),
         catchError(this.handleError<Planet[]>('allPlanets', []))
       );
   }
