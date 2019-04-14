@@ -1,0 +1,54 @@
+<div *ngIf="planet" class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="table-container">
+        <div class="table-container-header">
+          <p>General Information</p>
+        </div>
+      <table>
+        <tr *ngFor="let generalInformationHeader of generalInformationHeaders" class="data-table-row">
+          <th *ngFor="let item of generalInformationHeader | keyvalue" class="data-table-header">{{item.value}}</th>
+          <td *ngFor="let item of generalInformationHeader | keyvalue" class="text-right">{{planet[item.key]}}</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="table-container">
+        <div class="table-container-header">
+          <p>Film Appearances</p>
+        </div>
+        <table>
+          <tr class="data-table-header">
+            <th *ngFor="let column of displayedColumnsFilmsTable">{{column}}</th>
+          </tr>
+          <tr *ngFor="let film of films" class="data-table-row">
+            <td class="text-left">{{film.title}}</td>
+            <td class="text-right">{{film.release_date | date:'shortDate'}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-container mt-5">
+      <div class="table-container-header">
+        <p>Residents</p>
+      </div>
+      <table>
+        <tr class="data-table-header">
+          <th *ngFor="let column of displayedColumnsResidentsTable">{{column}}</th>
+        </tr>
+        <tr *ngFor="let resident of residents" class="data-table-row">
+          <td class="text-left">{{resident.name}}</td>
+          <td class="text-right">{{resident.gender}}</td>
+          <td class="text-right">{{resident.birth_year}}</td>
+          <td class="text-right">{{resident.hair_color}}</td>
+          <td class="text-right">{{resident.height}}</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>

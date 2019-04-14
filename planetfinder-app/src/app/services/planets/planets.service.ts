@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Planet } from '../../models/planet';
-import { Observable, of } from 'rxjs';
+import {Observable, of} from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { ApiService } from '../api.service';
+import {HttpClient} from '@angular/common/http';
 
 const PLANETS_URL = 'planets';
 
@@ -12,6 +13,9 @@ const PLANETS_URL = 'planets';
 
 export class PlanetsService extends ApiService {
   private planetsUrl = this.baseUrl + PLANETS_URL;
+  constructor(http: HttpClient) {
+    super(http);
+  }
 
    allPlanets(): Observable<Planet[]> {
     return this.http.get<any>(this.planetsUrl)
@@ -29,14 +33,13 @@ export class PlanetsService extends ApiService {
 
     return this.http.get<any>(`${this.planetsUrl}/?search=${term}`).pipe(
       map(res => res.results),
-      tap(_ => console.log(`found planet matching "${term}"`)),
       catchError(this.handleError<Planet[]>('searchPlanetByName', []))
     );
   }
-  getPlanetById(id: string): Observable<Planet> {
+  getPlanetByIdWithDetails(id: string): Observable<Planet> {
     return this.http.get<any>(`${this.planetsUrl}/${id}`).pipe(
-      tap(_ => console.log(`fetched planet id=${id}`)),
+      map(res => res ),
       catchError(this.handleError<Planet[]>('getPlanetById', []))
     );
-  }
-}
+  }}
+

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PlanetInfoComponent } from './planet-info.component';
+import { PlanetDetailsComponent } from './planet-details.component';
 
 describe('PlanetInfoComponent', () => {
-  let component: PlanetInfoComponent;
-  let fixture: ComponentFixture<PlanetInfoComponent>;
+  let component: PlanetDetailsComponent;
+  let fixture: ComponentFixture<PlanetDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanetInfoComponent ]
+      declarations: [ PlanetDetailsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlanetInfoComponent);
+    fixture = TestBed.createComponent(PlanetDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

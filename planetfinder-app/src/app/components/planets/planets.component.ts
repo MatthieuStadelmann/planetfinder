@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PlanetsService } from '../services/planets/planets.service';
-import { Planet } from '../models/planet';
+import { PlanetsService } from '../../services/planets/planets.service';
+import { Planet } from '../../models/planet';
 
 @Component({
   selector: 'app-planets',

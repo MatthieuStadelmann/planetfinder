@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlanetsComponent } from './planets/planets.component';
+import { PlanetsComponent } from './components/planets/planets.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NavComponent } from './nav/nav.component';
-import { PlanetInfoComponent } from './planet-info/planet-info.component';
-import { DataTableComponent } from './planets/data-table/data-table.component';
+import { NavComponent } from './components/nav/nav.component';
+import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
+import { DataTableComponent } from './components/planets/data-table/data-table.component';
 
 
 @NgModule({
@@ -15,7 +15,7 @@ import { DataTableComponent } from './planets/data-table/data-table.component';
     AppComponent,
     PlanetsComponent,
     NavComponent,
-    PlanetInfoComponent,
+    PlanetDetailsComponent,
     DataTableComponent
   ],
   imports: [

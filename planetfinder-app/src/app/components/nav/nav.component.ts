@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { PlanetsService } from '../services/planets/planets.service';
+import { PlanetsService } from '../../services/planets/planets.service';
 import {
   debounceTime, distinctUntilChanged, switchMap
 } from 'rxjs/operators';
-import {Planet} from '../models/planet';
+import {Planet} from '../../models/planet';
 
 @Component({
   selector: 'app-nav',
