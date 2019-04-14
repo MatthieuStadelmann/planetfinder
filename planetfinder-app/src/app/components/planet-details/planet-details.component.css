@@ -45,3 +45,9 @@ th:nth-child(n+2) {
 .data-table-header {
   color: #555;
 }
+
+.back-btn {
+  cursor: pointer;
+  position: absolute;
+  top: -35px;
+}
