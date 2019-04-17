@@ -3,6 +3,7 @@ import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Observable, Subject} from 'rxjs';
 import {Planet} from '../../models/planet';
 import {PlanetsService} from '../../services/planets/planets.service';
+import {getPlanetId} from '../../utils/utils';
 
 @Component({
   selector: 'app-search-bar',
@@ -13,6 +14,7 @@ export class SearchBarComponent implements OnInit {
 
   private planets$: Observable<Planet[]>;
   private searchTerms = new Subject<string>();
+  public getPlanetId = getPlanetId;
 
   constructor(private planetsService: PlanetsService) { }
 

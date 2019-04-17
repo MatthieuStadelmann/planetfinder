@@ -4,7 +4,7 @@
   </div>
   <ul class="search-result">
     <li *ngFor="let planet of planets$ | async">
-      <a routerLink="/planet/{{planet.url.substring(planet.url.length -2, planet.url.length)}}">
+      <a routerLink="planet/{{getPlanetId(planet.url)}}">
         {{planet.name}}
       </a>
     </li>

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Planet} from '../../../models/planet';
+import {getPlanetId} from '../../../utils/utils';
 
 @Component({
   selector: 'app-data-table',
@@ -7,6 +8,7 @@ import {Planet} from '../../../models/planet';
   styleUrls: ['./data-table.component.css']
 })
 export class DataTableComponent implements OnInit {
+  public getPlanetId = getPlanetId;
   @Input()
   displayedColumns: string[];
   @Input()
