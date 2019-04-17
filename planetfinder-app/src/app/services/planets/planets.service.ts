@@ -36,7 +36,7 @@ export class PlanetsService extends ApiService {
       catchError(this.handleError<Planet[]>('searchPlanetByName', []))
     );
   }
-  getPlanetByIdWithDetails(id: string): Observable<Planet> {
+  getPlanetById(id: string): Observable<Planet> {
     return this.http.get<any>(`${this.planetsUrl}/${id}`).pipe(
       map(res => res ),
       catchError(this.handleError<Planet[]>('getPlanetById', []))
