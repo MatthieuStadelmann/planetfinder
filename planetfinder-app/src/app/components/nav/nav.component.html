@@ -3,16 +3,5 @@
     <img alt="Home" src="../../../assets/icons/r2d2.svg">
     <span class="navbar-title">Planet Finder</span>
   </a>
-  <div class="search-component">
-    <div class="input-group">
-      <input #searchBox class="search-box" (input)="search(searchBox.value)" placeholder="Search for planet by name"/>
-    </div>
-    <ul class="search-result">
-      <li *ngFor="let planet of planets$ | async">
-      <a routerLink="/planet/{{planet.url.substring(planet.url.length -2, planet.url.length)}}">
-          {{planet.name}}
-        </a>
-      </li>
-    </ul>
-  </div>
+  <app-search-bar></app-search-bar>
 </nav>

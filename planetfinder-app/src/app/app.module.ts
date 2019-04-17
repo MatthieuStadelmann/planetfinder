@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
 import { PlanetDetailsComponent } from './components/planet-details/planet-details.component';
 import { DataTableComponent } from './components/planets/data-table/data-table.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DataTableComponent } from './components/planets/data-table/data-table.c
     PlanetsComponent,
     NavComponent,
     PlanetDetailsComponent,
-    DataTableComponent
+    DataTableComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
