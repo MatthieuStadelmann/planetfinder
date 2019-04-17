@@ -14,12 +14,7 @@ import {PeopleService} from '../../services/people/people.service';
   styleUrls: ['./planet-details.component.css']
 })
 export class PlanetDetailsComponent implements OnInit {
-  private planet: Planet;
-  private films: Film[] = [];
-  private residents: People[] = [];
-  private locationId: string = this.route.snapshot.paramMap.get('id');
-
-  generalInformationHeaders: object[] = [
+  public generalInformationHeaders: object[] = [
     {name: 'Name'},
     {population: 'Population'},
     {gravity: 'Gravity'},
@@ -29,8 +24,13 @@ export class PlanetDetailsComponent implements OnInit {
     {rotation_period: 'Rotation Period'},
     {surface_water: 'Surface Water'},
     {terrain: 'Terrain'}];
-  displayedColumnsFilmsTable: string[] = ['Title', 'Release Date'];
+  public displayedColumnsFilmsTable: string[] = ['Title', 'Release Date'];
   displayedColumnsResidentsTable: string[] = ['Name', 'Gender', 'Birth Year', 'Hair Color', 'Height'];
+  private planet: Planet;
+  private films: Film[] = [];
+  private residents: People[] = [];
+  private locationId: string = this.route.snapshot.paramMap.get('id');
+
   constructor(
     private planetsService: PlanetsService,
     private filmsService: FilmsService,

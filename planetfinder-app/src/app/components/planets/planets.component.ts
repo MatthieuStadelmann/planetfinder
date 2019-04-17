@@ -10,8 +10,8 @@ import {Subscription} from 'rxjs';
 })
 export class PlanetsComponent implements OnInit, OnDestroy {
   constructor(private planetsService: PlanetsService) { }
+  public displayedColumns: string[] = ['Name', 'Population', 'Film Appearances', 'Last Edited', 'Created'];
   private planets: Planet[];
-  private displayedColumns: string[] = ['Name', 'Population', 'Film Appearances', 'Last Edited', 'Created'];
   private planetsSubscription: Subscription;
 
   ngOnInit() {

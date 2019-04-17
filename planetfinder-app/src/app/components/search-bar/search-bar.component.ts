@@ -11,7 +11,7 @@ import {PlanetsService} from '../../services/planets/planets.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  planets$: Observable<Planet[]>;
+  private planets$: Observable<Planet[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private planetsService: PlanetsService) { }
